@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced CSS Examples</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #fcffffde;
+            }
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            p {
+                margin: 20px 0;
+                padding: 10px;
+                background-color: white;
+                border-left: 5px solid #01070e;
+                color: rgb(8, 8, 31);
+            }
+            pre {
+                background-color: rgb(206, 206, 206);
+                color: rgb(0, 0, 0);
+                border: 1px solid #ddd;
+                padding: 10px;
+                overflow: auto;
+            }
+           
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Examples and Explanations</h1>
+
+        <p><strong>1. What is CSS?</strong><br>
+        CSS (Cascading Style Sheets) is a language used to describe the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, paper, or in other media.</p>
+
+        <p><strong>2. What are CSS Selectors?</strong><br>
+        CSS Selectors are patterns used to select the elements you want to style. Examples include element selectors, class selectors, and ID selectors.</p>
+
+        <p><strong>3. How do you add CSS to a webpage?</strong><br>
+        CSS can be added to HTML documents in three ways: Inline, Internal, and External. Inline uses the `style` attribute inside HTML elements. Internal uses the `&lt;style&gt;` element inside the `&lt;head&gt;` section. External links to an external CSS file using the `&lt;link&gt;` element.</p>
+
+        <p><strong>4. What are CSS Media Queries?</strong><br>
+        Media queries are used to apply different styles for different devices or screen sizes. They help in making a responsive design that works well on all devices.</p>
+        <pre>
+            <code>
+                @media (max-width: 600px) {
+                    .container {
+                        flex-direction: column;
+                    }
+                }
+            </code>
+        </pre>
+
+        <p><strong>5. What is Flexbox?</strong><br>
+        Flexbox is a one-dimensional layout method for arranging items in rows or columns. It allows you to distribute space within an item and align items within a container.</p>
+        <pre>
+            <code>
+                .container {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .item {
+                    background-color: #28a745;
+                    color: #fff;
+                    padding: 20px;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="container" style="display: flex; justify-content: space-between;">
+            <div class="item" style="background-color: #28a745; color: #fff; padding: 20px;">Item 1</div>
+            <div class="item" style="background-color: #28a745; color: #fff; padding: 20px;">Item 2</div>
+            <div class="item" style="background-color: #28a745; color: #fff; padding: 20px;">Item 3</div>
+        </div>
+
+        <p><strong>6. What is CSS Grid Layout?</strong><br>
+        CSS Grid Layout is a 2-dimensional layout system for the web. It allows you to layout items in rows and columns, making complex layouts simple to create.</p>
+        <pre>
+            <code>
+                .container {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 10px;
+                }
+                .item {
+                    background-color: #007BFF;
+                    color: #fff;
+                    padding: 20px;
+                    text-align: center;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div class="item" style="background-color: #007BFF; color: #fff; padding: 20px; text-align: center;">Item 1</div>
+            <div class="item" style="background-color: #007BFF; color: #fff; padding: 20px; text-align: center;">Item 2</div>
+            <div class="item" style="background-color: #007BFF; color: #fff; padding: 20px; text-align: center;">Item 3</div>
+        </div>
+
+        <p><strong>7. What is the CSS Box Model?</strong><br>
+        The CSS Box Model is a box that wraps around every HTML element. It consists of margins, borders, padding, and the actual content. Understanding the box model is crucial for creating complex layouts.</p>
+        <pre>
+            <code>
+                .box {
+                    width: 200px;
+                    padding: 20px;
+                    border: 5px solid #000;
+                    margin: 10px;
+                    background-color: #f8d7da;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="box" style="width: 200px; padding: 20px; border: 5px solid #000; margin: 10px; background-color: #f8d7da;">
+            This is a box model example.
+        </div>
+
+        <p><strong>8. How do you create animations in CSS?</strong><br>
+        CSS animations allow you to animate transitions between different CSS styles. You can control the animation's duration, timing, and many other properties.</p>
+        <pre>
+            <code>
+                .box {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #007BFF;
+                    animation: move 5s infinite;
+                }
+                @keyframes move {
+                    0% { transform: translateX(0); }
+                    50% { transform: translateX(100px); }
+                    100% { transform: translateX(0); }
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="box1"></div>
+            <style>
+              .box1 {
+                width: 100px;
+                height: 100px;
+                background-color: #007BFF;
+                animation: move 5s infinite;
+            }
+            @keyframes move {
+                0% { transform: translateX(0); }
+                50% { transform: translateX(100px); }
+                100% { transform: translateX(0); }
+            }
+            </style>
+        <p><strong>9. How do you use the CSS :hover pseudo-class?</strong><br>
+        The `:hover` pseudo-class applies a style to an element when the user hovers over it with a pointing device.</p>
+        <pre>
+            <code>
+                .button {
+                    background-color: #007BFF;
+                    color: white;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                }
+                .button:hover {
+                    background-color: #0056b3;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <a href="#" class="button" style="background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none;">Hover me</a>
+
+        <p><strong>10. What are CSS variables?</strong><br>
+        CSS variables, also known as custom properties, allow you to store values that you can reuse throughout your CSS.</p>
+        <pre>
+            <code>
+                :root {
+                    --main-color: #007BFF;
+                }
+                .box {
+                    background-color: var(--main-color);
+                    color: #fff;
+                    padding: 20px;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="box" style="background-color: #007BFF; color: #fff; padding: 20px;">
+            This box uses a CSS variable for its background color.
+        </div>
+
+        <p><strong>11. What is the difference between `display: none` and `visibility: hidden`?</strong><br>
+        `display: none` removes the element from the document flow, while `visibility: hidden` hides the element but still takes up space in the document flow.</p>
+        <pre>
+            <code>
+                .hidden {
+                    display: none;
+                }
+                .invisible {
+                    visibility: hidden;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div>This is visible.</div>
+        <div class="hidden" style="display: none;">This is hidden and does not take up space.</div>
+        <div class="invisible" style="visibility: hidden;">This is hidden but still takes up space.</div>
+
+        <p><strong>12. What is the `z-index` property?</strong><br>
+        The `z-index` property specifies the stack order of an element. Elements with a higher `z-index` are placed in front of elements with a lower `z-index`.</p>
+        <pre>
+            <code>
+                .box1 {
+                    position: absolute;
+                    left: 50px;
+                    top: 50px;
+                    background-color: #007BFF;
+                    width: 100px;
+                    height: 100px;
+                    z-index: 1;
+                }
+                .box2 {
+                    position: absolute;
+                    left: 70px;
+                    top: 70px;
+                    background-color: #ffc107;
+                    width: 100px;
+                    height: 100px;
+                    z-index: 2;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="box1" style=" position: relative; left: 50px; top: 50px; background-color: #007BFF; width: 100px; height: 100px; z-index: 1;"></div>
+        <div class="box2" style=" left: 70px; top: 70px; background-color: #ffc107; width: 100px; height: 100px; z-index: 2;"></div>
+        <p><strong>13. What is the CSS `float` property?</strong><br>
+        The `float` property is used for positioning and formatting content. It allows an element to be taken out of the normal flow and placed to the left or right of its container, allowing text and inline elements to wrap around it.</p>
+        <pre>
+            <code>
+                .left {
+                    float: left;
+                    width: 50px;
+                    height: 50px;
+                    background-color: #007BFF;
+                    margin-right: 10px;
+                }
+                .right {
+                    float: right;
+                    width: 50px;
+                    height: 50px;
+                    background-color: #ffc107;
+                    margin-left: 10px;
+                }
+            </code>
+        </pre>
+        <p><strong>Output:</strong></p>
+        <div class="left" style="float: left; width: 50px; height: 50px; background-color: #007BFF; margin-right: 10px;"></div>
+        <div class="right" style="float: right; width: 50px; height: 50px; background-color: #ffc107; margin-left: 10px;"></div>
+        <div style="overflow: hidden;">
+            This text will wrap around the floated elements.
+
+            <p><strong>14. What is the CSS `overflow` property?</strong><br>
+                The `overflow` property specifies what happens if content overflows an element's box. It can be set to `visible`, `hidden`, `scroll`, or `auto`.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 200px;
+                            height: 100px;
+                            overflow: scroll;
+                            background-color: #f8f9fa;
+                            border: 1px solid #ccc;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 200px; height: 100px; overflow: scroll; background-color: #f8f9fa; border: 1px solid #ccc;">
+                    This box has scrollable content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+        
+                <p><strong>15. What is the CSS `opacity` property?</strong><br>
+                The `opacity` property specifies the transparency level of an element. It can be a value between 0.0 (completely transparent) and 1.0 (completely opaque).</p>
+                <pre>
+                    <code>
+                        .transparent {
+                            opacity: 0.5;
+                            background-color: #007BFF;
+                            color: #fff;
+                            padding: 20px;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="transparent" style="opacity: 0.5; background-color: #007BFF; color: #fff; padding: 20px;">
+                    This box is 50% transparent.
+                </div>
+        
+                <p><strong>16. What are CSS Pseudo-elements?</strong><br>
+                Pseudo-elements are used to style specified parts of an element. Examples include `::before`, `::after`, `::first-letter`, and `::first-line`.</p>
+                <pre>
+                    <code>
+                        .pseudo-element::before {
+                            content: "Prefix: ";
+                            color: #007BFF;
+                        }
+                        .pseudo-element::after {
+                            content: " :Suffix";
+                            color: #28a745;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <p class="pseudo-element" style="display: inline-block;">
+                    This is an example of pseudo-elements.
+                </p>
+        
+                <p><strong>17. What is the CSS `transition` property?</strong><br>
+                The `transition` property allows you to change property values smoothly (over a given duration).</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 100px;
+                            height: 100px;
+                            background-color: #007BFF;
+                            transition: background-color 0.5s ease;
+                        }
+                        .box:hover {
+                            background-color: #28a745;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box3">
+                </div>
+                <style>
+                  .box3 {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #007BFF;
+                    transition: background-color 1s ease;
+                    }
+                    .box3:hover {
+                        background-color: #28a745;
+                    } 
+                </style>
+        
+                <p><strong>18. What is the CSS `transform` property?</strong><br>
+                The `transform` property applies a 2D or 3D transformation to an element. This includes translate, rotate, scale, and skew transformations.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 100px;
+                            height: 100px;
+                            background-color: #007BFF;
+                            transform: rotate(45deg);
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 100px; height: 100px; background-color: #007BFF; transform: rotate(45deg);">
+                </div>
+        
+                <p><strong>19. What is the CSS `box-shadow` property?</strong><br>
+                The `box-shadow` property adds shadow effects around an element's frame. You can set horizontal and vertical offsets, blur radius, spread radius, and color.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 100px;
+                            height: 100px;
+                            background-color: #007BFF;
+                            box-shadow: 10px 10px 5px #888888;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 100px; height: 100px; background-color: #007BFF; box-shadow: 10px 10px 5px #888888;">
+                </div>
+        
+                <p><strong>20. What is the CSS `background` property?</strong><br>
+                The `background` property is a shorthand property for setting background properties in one declaration. These include color, image, position, size, repeat, origin, clip, and attachment.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 200px;
+                            height: 100px;
+                            background: #007BFF url('background.jpg') no-repeat center center;
+                            background-size: cover;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 200px; height: 100px; background: #007BFF url('background.jpg') no-repeat center center; background-size: cover;">
+                </div>
+        
+                <p><strong>21. What is the CSS `border-radius` property?</strong><br>
+                The `border-radius` property defines the radius of the element's corners. It can have one to four values.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 100px;
+                            height: 100px;
+                            background-color: #007BFF;
+                            border-radius: 25px;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 100px; height: 100px; background-color: #007BFF; border-radius: 25px;">
+                </div>
+        
+                <p><strong>22. What is the CSS `background-image` property?</strong><br>
+                The `background-image` property sets one or more background images for an element.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 200px;
+                            height: 100px;
+                            background-image: url('background.jpg');
+                            background-size: cover;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box11">
+                </div>
+                <style>
+                .box11 {
+                    width: 200px;
+                    height: 100px;
+                    background-image: url('https://c4.wallpaperflare.com/wallpaper/297/288/1009/5bd320d590bcf-wallpaper-preview.jpg');
+                    background-size: cover;
+                }
+                </style>
+                <p><strong>23. What is the CSS `linear-gradient` function?</strong><br>
+                The `linear-gradient` function creates an image that represents a linear gradient of colors. It can be used with the `background` property.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 200px;
+                            height: 100px;
+                            background: linear-gradient(to right, #007BFF, #00FF7F);
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 200px; height: 100px; background: linear-gradient(to right, #007BFF, #00FF7F);">
+                </div>
+        
+                <p><strong>24. What is the CSS `clip-path` property?</strong><br>
+                The `clip-path` property creates a clipping region that determines which part of an element is visible.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 200px;
+                            height: 100px;
+                            background-color: #007BFF;
+                            clip-path: circle(50% at 50% 50%);
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box" style="width: 200px; height: 100px; background-color: #007BFF; clip-path: circle(50% at 50% 50%);">
+                </div>
+        
+                <p><strong>25. What is the CSS `object-fit` property?</strong><br><p>
+                The `object-fit` property specifies how an `img` or `video` should be resized to fit its container.</p>
+                <pre>
+                    <code>
+                        .box {
+                            width: 200px;
+                            height: 100px;
+                            background-color: #f8f9fa;
+                            overflow: hidden;
+                        }
+                        .box img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="box2">
+                    <img src="https://wallpapers.com/images/high/best-hd-1920-x-1080-background-c5wle96g24d46tdw.webp">
+                </div>
+                    <style>
+                      .box2 {
+                        width: 200px;
+                        height: 100px;
+                        background-color: #f8f9fa;
+                        overflow: hidden;
+                    }
+                    .box2 img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    </style>
+        
+                <p><strong>26. What is the CSS `flex-direction` property?</strong><br>
+                The `flex-direction` property specifies the direction of the flexible items in a flex container.</p>
+                <pre>
+                    <code>
+                        .flex-container {
+                            display: flex;
+                            flex-direction: row-reverse;
+                            background-color: #f8f9fa;
+                        }
+                        .flex-item {
+                            background-color: #007BFF;
+                            margin: 10px;
+                            padding: 20px;
+                            color: white;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="flex-container" style="display: flex; flex-direction: row-reverse; background-color: #f8f9fa;">
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 1</div>
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 2</div>
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 3</div>
+                </div>
+        
+                <p><strong>27. What is the CSS `align-items` property?</strong><br>
+                The `align-items` property aligns flex items along the cross axis of the flex container.</p>
+                <pre>
+                    <code>
+                        .flex-container {
+                            display: flex;
+                            align-items: center;
+                            height: 200px;
+                            background-color: #f8f9fa;
+                        }
+                        .flex-item {
+                            background-color: #007BFF;
+                            margin: 10px;
+                            padding: 20px;
+                            color: white;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="flex-container" style="display: flex; align-items: center; height: 200px; background-color: #f8f9fa;">
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 1</div>
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 2</div>
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 3</div>
+                </div>
+        
+                <p><strong>28. What is the CSS `justify-content` property?</strong><br>
+                The `justify-content` property aligns flex items along the main axis of the flex container.</p>
+                <pre>
+                    <code>
+                        .flex-container {
+                            display: flex;
+                            justify-content: space-around;
+                            background-color: #f8f9fa;
+                        }
+                        .flex-item {
+                            background-color: #007BFF;
+                            margin: 10px;
+                            padding: 20px;
+                            color: white;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="flex-container" style="display: flex; justify-content: space-around; background-color: #f8f9fa;">
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 1</div>
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 2</div>
+                    <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 3</div>
+                </div>
+        
+                <p><strong>29. What is the CSS `grid-template-columns` property?</strong><br>
+                The `grid-template-columns` property defines the number and size of the columns in a grid layout.</p>
+                <pre>
+                    <code>
+                        .grid-container {
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            gap: 10px;
+                            background-color: #f8f9fa;
+                        }
+                        .grid-item {
+                            background-color: #007BFF;
+                            padding: 20px;
+                            color: white;
+                            text-align: center;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="grid-container" style="display: grid; grid-template-columns: auto auto auto; gap: 10px; background-color: #f8f9fa;">
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 1</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 2</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 3</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 4</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 5</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 6</div>
+                </div>
+        
+                <p><strong>30. What is the CSS `grid-template-rows` property?</strong><br>
+                The `grid-template-rows` property defines the number and size of the rows in a grid layout.</p>
+                <pre>
+                    <code>
+                        .grid-container {
+                            display: grid;
+                            grid-template-rows: 100px 200px;
+                            gap: 10px;
+                            background-color: #f8f9fa;
+                        }
+                        .grid-item {
+                            background-color: #007BFF;
+                            padding: 20px;
+                            color: white;
+                            text-align: center;
+                        }
+                    </code>
+                </pre>
+                <p><strong>Output:</strong></p>
+                <div class="grid-container" style="display: grid; grid-template-rows: 100px 200px; gap: 10px; background-color: #f8f9fa;">
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 1</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 2</div>
+                    <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 3</div>
+                 </div>
+                 <p><strong>31. What is the CSS `align-self` property?</strong><br>
+                    The `align-self` property allows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items.</p>
+                    <pre>
+                        <code>
+                            .flex-container {
+                                display: flex;
+                                background-color: #f8f9fa;
+                                height: 200px;
+                            }
+                            .flex-item {
+                                background-color: #007BFF;
+                                margin: 10px;
+                                padding: 20px;
+                                color: white;
+                            }
+                            .flex-item:nth-child(2) {
+                                align-self: flex-end;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="flex-container" style="display: flex; background-color: #f8f9fa; height: 200px;">
+                        <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 1</div>
+                        <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white; align-self: flex-end;">Item 2</div>
+                        <div class="flex-item" style="background-color: #007BFF; margin: 10px; padding: 20px; color: white;">Item 3</div>
+                    </div>
+            
+                    <p><strong>32. What is the CSS `grid-template-areas` property?</strong><br>
+                    The `grid-template-areas` property specifies named grid areas, making the layout easier to understand and control.</p>
+                    <pre>
+                        <code>
+                            .grid-container {
+                                display: grid;
+                                grid-template-areas:
+                                    'header header header'
+                                    'menu main main'
+                                    'footer footer footer';
+                                gap: 10px;
+                                background-color: #f8f9fa;
+                            }
+                            .header { grid-area: header; }
+                            .menu { grid-area: menu; }
+                            .main { grid-area: main; }
+                            .footer { grid-area: footer; }
+            
+                            .grid-item {
+                                background-color: #007BFF;
+                                padding: 20px;
+                                color: white;
+                                text-align: center;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="grid-container" style="display: grid; grid-template-areas: 'header header header' 'menu main main' 'footer footer footer'; gap: 10px; background-color: #f8f9fa;">
+                        <div class="grid-item header" style="grid-area: header; background-color: #007BFF; padding: 20px; color: white; text-align: center;">Header</div>
+                        <div class="grid-item menu" style="grid-area: menu; background-color: #007BFF; padding: 20px; color: white; text-align: center;">Menu</div>
+                        <div class="grid-item main" style="grid-area: main; background-color: #007BFF; padding: 20px; color: white; text-align: center;">Main</div>
+                        <div class="grid-item footer" style="grid-area: footer; background-color: #007BFF; padding: 20px; color: white; text-align: center;">Footer</div>
+                    </div>
+            
+                    <p><strong>33. What is the CSS `place-items` property?</strong><br>
+                    The `place-items` property is a shorthand for `align-items` and `justify-items` in CSS Grid Layouts.</p>
+                    <pre>
+                        <code>
+                            .grid-container {
+                                display: grid;
+                                place-items: center;
+                                background-color: #f8f9fa;
+                                height: 200px;
+                            }
+                            .grid-item {
+                                background-color: #007BFF;
+                                padding: 20px;
+                                color: white;
+                                text-align: center;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="grid-container" style="display: grid; place-items: center; background-color: #f8f9fa; height: 200px;">
+                        <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Centered Item</div>
+                    </div>
+            
+                    <p><strong>34. What is the CSS `gap` property?</strong><br>
+                    The `gap` property specifies the gaps (gutters) between rows and columns in a grid or flex container.</p>
+                    <pre>
+                        <code>
+                            .grid-container {
+                                display: grid;
+                                gap: 20px;
+                                background-color: #f8f9fa;
+                            }
+                            .grid-item {
+                                background-color: #007BFF;
+                                padding: 20px;
+                                color: white;
+                                text-align: center;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="grid-container" style="display: grid; gap: 20px; background-color: #f8f9fa;">
+                        <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 1</div>
+                        <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 2</div>
+                        <div class="grid-item" style="background-color: #007BFF; padding: 20px; color: white; text-align: center;">Item 3</div>
+                    </div>
+            
+                    <p><strong>35. What is the CSS `z-index` property?</strong><br>
+                    The `z-index` property specifies the stack order of an element. Elements with a higher `z-index` are displayed in front of those with a lower `z-index`.</p>
+                    <pre>
+                        <code>
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                position: absolute;
+                                background-color: #007BFF;
+                            }
+                            .box1 {
+                                left: 50px;
+                                top: 50px;
+                                z-index: 1;
+                            }
+                            .box2 {
+                                left: 70px;
+                                top: 70px;
+                                z-index: 2;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div style="position: relative; height: 200px;">
+                        <div class="box6 box4"></div>
+                        <div class="box6 box5"></div>
+                    </div>
+                 <style>  
+                 .box6 {
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                    background-color: #007BFF;
+                }
+                .box4 {
+                    left: 50px;
+                    top: 50px;
+                    z-index: 1;
+                }
+                .box5 {
+                    background-color: red;
+                    left: 70px;
+                    top: 70px;
+                    z-index: 2;
+                }</style>
+                    <p><strong>36. What is the CSS `pointer-events` property?</strong><br>
+                    The `pointer-events` property specifies under what circumstances (if any) a particular graphic element can become the target of mouse events.</p>
+                    <pre>
+                        <code>
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                background-color: #007BFF;
+                            }
+                            .box.disabled {
+                                pointer-events: none;
+                                background-color: #6c757d;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="box" style="width: 100px; height: 100px; background-color: #007BFF;"></div>
+                    <div class="box disabled" style="width: 100px; height: 100px; background-color: #6c757d; pointer-events:painted; margin-top: 20px;"></div>
+            
+                    <p><strong>37. What is the CSS `filter` property?</strong><br>
+                    The `filter` property applies graphical effects like blur or color shift to an element.</p>
+                    <pre>
+                        <code>
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                background-color: #007BFF;
+                            }
+                            .blurred {
+                                filter: blur(5px);
+                            }
+                            .grayscale {
+                                filter: grayscale(100%);
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="box" style="width: 100px; height: 100px; background-color: #007BFF;"></div>
+                    <div class="box blurred" style="width: 100px; height: 100px; background-color: #007BFF; filter: blur(5px); margin-top: 20px;"></div>
+                    <div class="box grayscale" style="width: 100px; height: 100px; background-color: #007BFF; filter: grayscale(100%); margin-top: 20px;"></div>
+            
+                    <p><strong>38. What is the CSS `backdrop-filter` property?</strong><br>
+                    The `backdrop-filter` property applies graphical effects such as blurring or color shifting to the area behind an element.</p>
+                    <pre>
+                        <code>
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                background-color: rgba(0, 123, 255, 0.5);
+                                backdrop-filter: blur(5px);
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div style="width: 100px; height: 100px; background-color: #007BFF;"></div>
+                    <div class="box" style="width: 100px; height: 100px; background-color: rgba(0, 123, 255, 0.5); backdrop-filter: blur(5px); margin-top: 20px;"></div>
+            
+                    <p><strong>39. What is the CSS `will-change` property?</strong><br>
+                    The `will-change` property hints to browsers about which elements will change, allowing them to optimize rendering.</p>
+                    <pre>
+                        <code>
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                background-color: #007BFF;
+                                will-change: transform;
+                            }
+                            .box:hover {
+                                transform: scale(1.2);
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="box" style="width: 100px; height: 100px; background-color: #007BFF; will-change: transform;"></div>
+            
+                    <p><strong>40. What is the CSS `scroll-snap-align` property?</strong><br>
+                    The `scroll-snap-align` property defines how elements are aligned in the scroll container.</p>
+                    <pre>
+                        <code>
+                            .snap-container {
+                                display: flex;
+                                overflow-x: scroll;
+                                scroll-snap-type: x mandatory;
+                            }
+                            .snap-item {
+                                scroll-snap-align: start;
+                                flex: none;
+                                width: 200px;
+                                height: 200px;
+                                background-color: #007BFF;
+                                margin-right: 10px;
+                                text-align: center;
+                                line-height: 200px;
+                                color: white;
+                            }
+                        </code>
+                    </pre>
+                    <p><strong>Output:</strong></p>
+                    <div class="snap-container" style="display: flex; overflow-x: scroll; scroll-snap-type: x mandatory;">
+                        <div class="snap-item" style="scroll-snap-align: start; flex: none; width: 200px; height: 200px; background-color: #007BFF; margin-right: 10px; text-align: center; line-height: 200px; color: white;">Item 1</div>
+                        <div class="snap-item" style="scroll-snap-align: start; flex: none; width: 200px; height: 200px; background-color: #007BFF; margin-right: 10px; text-align: center; line-height: 200px; color: white;">Item 2</div>
+                        <div class="snap-item" style="scroll-snap-align: start; flex: none; width: 200px; height: 200px; background-color: #007BFF; margin-right: 10px; text-align: center; line-height: 200px; color: white;">Item 3</div>
+                  </div>
+        <p><strong>41. What is the CSS `isolation` property?</strong><br>
+        The `isolation` property defines whether an element should create a new stacking context, allowing it to be rendered independently of its siblings.</p>
+
+        <p><strong>42. What is the CSS `clip-path` property?</strong><br>
+        The `clip-path` property creates a clipping region that defines which part of an element is visible, effectively creating complex shapes by clipping out areas.</p>
+
+        <p><strong>43. What is the CSS `object-fit` property?</strong><br>
+        The `object-fit` property defines how the content of a replaced element, such as an &lt;img&gt; or &lt;video&gt;, should be resized to fit its container.</p>
+
+        <p><strong>44. What is the CSS `object-position` property?</strong><br>
+        The `object-position` property sets the alignment of the content within a replaced element's box, affecting how it is positioned inside its container.</p>
+
+        <p><strong>45. What is the CSS `shape-outside` property?</strong><br>
+        The `shape-outside` property allows text to wrap around a shape outside of a floated element, rather than its rectangular box.</p>
+
+        <p><strong>46. What is the CSS `mask` property?</strong><br>
+        The `mask` property applies an image or a gradient to an element, which masks parts of the element's content, creating complex visual effects.</p>
+
+        <p><strong>47. What is the CSS `mix-blend-mode` property?</strong><br>
+        The `mix-blend-mode` property defines how an element's content should blend with the content of the element's parent and background.</p>
+
+        <p><strong>48. What is the CSS `isolation` property?</strong><br>
+        The `isolation` property determines whether an element should create a new stacking context, helping manage how elements blend together.</p>
+
+        <p><strong>49. What is the CSS `writing-mode` property?</strong><br>
+        The `writing-mode` property defines whether lines of text are laid out horizontally or vertically, and the direction in which blocks progress.</p>
+
+        <p><strong>50. What is the CSS `counter-increment` property?</strong><br>
+        The `counter-increment` property increases or decreases the value of a CSS counter, which can be used for custom list item markers or other dynamic content.</p>
+
+        <p><strong>51. What is the CSS `counter-reset` property?</strong><br>
+        The `counter-reset` property initializes or resets a CSS counter to a specific value, which is then incremented by `counter-increment`.</p>
+
+        <p><strong>52. What is the CSS `column-count` property?</strong><br>
+        The `column-count` property specifies the number of columns an element should be divided into for multi-column layout.</p>
+
+        <p><strong>53. What is the CSS `column-gap` property?</strong><br>
+        The `column-gap` property sets the gap between columns in a multi-column layout.</p>
+
+        <p><strong>54. What is the CSS `column-rule` property?</strong><br>
+        The `column-rule` property sets the width, style, and color of the rule (line) between columns in a multi-column layout.</p>
+
+        <p><strong>55. What is the CSS `column-span` property?</strong><br>
+        The `column-span` property specifies how many columns an element should span across in a multi-column layout.</p>
+
+        <p><strong>56. What is the CSS `column-width` property?</strong><br>
+        The `column-width` property sets the ideal width of columns in a multi-column layout.</p>
+
+        <p><strong>57. What is the CSS `hyphens` property?</strong><br>
+        The `hyphens` property controls how words are hyphenated when text wraps across multiple lines.</p>
+
+        <p><strong>58. What is the CSS `overflow-wrap` property?</strong><br>
+        The `overflow-wrap` property specifies whether the browser should insert line breaks within words to prevent text from overflowing its content box.</p>
+
+        <p><strong>59. What is the CSS `resize` property?</strong><br>
+        The `resize` property specifies whether an element is resizable by the user and which direction it can be resized.</p>
+
+        <p><strong>60. What is the CSS `scroll-behavior` property?</strong><br>
+        The `scroll-behavior` property specifies the scrolling behavior for a scrolling box, such as smooth scrolling.</p>
+
+        <p><strong>61. What is the CSS `scroll-margin` property?</strong><br>
+        The `scroll-margin` property sets the margin around the scroll snap area at which the snap should occur in a scroll container.</p>
+
+        <p><strong>62. What is the CSS `scroll-padding` property?</strong><br>
+        The `scroll-padding` property sets the padding around the scroll snap area at which the snap should occur in a scroll container.</p>
+
+        <p><strong>63. What is the CSS `writing-mode` property?</strong><br>
+        The `writing-mode` property defines whether lines of text are laid out horizontally or vertically, and the direction in which blocks progress.</p>
+
+        <p><strong>64. What is the CSS `initial` value?</strong><br>
+        The `initial` value sets a CSS property to its initial value as defined by the CSS specifications.</p>
+
+        <p><strong>65. What is the CSS `unset` value?</strong><br>
+        The `unset` value resets a property to its inherited value if it inherits from its parent, otherwise to its initial value.</p>
+
+        <p><strong>66. What is the CSS `revert` value?</strong><br>
+        The `revert` value resets a property to the value established by the user-agent stylesheet or other origin styles.</p>
+
+        <p><strong>67. What is the CSS `appearance` property?</strong><br>
+        The `appearance` property allows you to display an element using a platform-native styling based on the operating system's theme.</p>
+
+        <p><strong>68. What is the CSS `scroll-snap-type` property?</strong><br>
+        The `scroll-snap-type` property defines how strictly snap points are enforced on the scroll container, for both x and y directions.</p>
+
+        <p><strong>69. What is the CSS `scroll-snap-align` property?</strong><br>
+        The `scroll-snap-align` property defines how the snap container's children are aligned when snapping occurs.</p>
+
+        <p><strong>70. What is the CSS `object-fit` property?</strong><br>
+        The `object-fit` property defines how the content of a replaced element, such as an &lt;img&gt; or &lt;video&gt;, should be resized to fit its container.</p>
+
+        <p><strong>71. What is the CSS `object-position` property?</strong><br>
+        The `object-position` property sets the alignment of the content within a replaced element's box, affecting how it is positioned inside its container.</p>
+
+        <p><strong>72. What is the CSS `filter` property?</strong><br>
+        The `filter` property applies graphical effects like blur or color shift to an element.</p>
+
+        <p><strong>73. What is the CSS `backdrop-filter` property?</strong><br>
+        The `backdrop-filter` property applies graphical effects such as blurring or color shifting to the area behind an element.</p>
+
+        <p><strong>74. What is the CSS `font-feature-settings` property?</strong><br>
+        The `font-feature-settings` property allows control over advanced typographic features in OpenType fonts, like ligatures and alternate characters.</p>
+
+        <p><strong>75. What is the CSS `font-variant` property?</strong><br>
+        The `font-variant` property allows the use of small-caps and other typographic features.</p>
+
+        <p><strong>76. What is the CSS `hanging-punctuation` property?</strong><br>
+        The `hanging-punctuation` property specifies whether a punctuation mark should hang outside the line box.</p>
+
+        <p><strong>77. What is the CSS `writing-mode` property?</strong><br>
+        The `writing-mode` property defines whether lines of text are laid out horizontally or vertically, and the direction in which blocks progress.</p>
+
+        <p><strong>78. What is the CSS `grid-auto-flow` property?</strong><br>
+        The `grid-auto-flow` property controls how the auto-placement algorithm places items into the grid.</p>
+
+        <p><strong>79. What is the CSS `grid-template` property?</strong><br>
+        The `grid-template` property is a shorthand for defining `grid-template-rows`, `grid-template-columns`, and `grid-template-areas`.</p>
+
+        <p><strong>80. What is the CSS `place-self` property?</strong><br>
+        The `place-self` property is a shorthand for `align-self` and `justify-self`, aligning items in both the block and inline directions.</p>
+    </div>
+</body>
+</html>
